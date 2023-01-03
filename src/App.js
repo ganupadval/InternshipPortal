@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import NavBar from "./components/Navbar";
+import Coro from "./components/Carousel";
+import Cards from "./components/Card";
+import Footer from "./components/Footer";
+import Layout from "./components/Layout";
+import Search from "./components/Search";
+
+const data =[
+  {
+    company:'TCS',
+    domain: 'Frontend',
+    stipend: '3000',
+    duration:'1 month',
+    location:'Work From Home',
+    prereq:'MERN',
+    url:'https://internshala.com/internships/'
+  },
+  {
+    company:'TCS',
+    domain: 'Frontend',
+    stipend: '3000',
+    duration:'1 month',
+    location:'Work From Home',
+    prereq:'MERN',
+    url:'https://internshala.com/internships/'
+  }
+]
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout>
+      <Coro/>
+      <Search/>
+      <hr style={{margin:'0px'}}/>
+      <div className="d-flex">
+      <Cards data={data}/>
+      </div>
+      </Layout>
     </div>
   );
 }
